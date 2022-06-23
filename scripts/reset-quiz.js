@@ -1,37 +1,24 @@
-import { solutions, radioInputs, quizForm, scoreParagraph, postQuizButtons, viewSolutionsButton, svgs, submitButton, codeBoxes } from './html-elements.js';
+import { solutions, radioInputs, codeBoxes } from './html-elements.js';
 import { fadeInAllElements } from './fade-in-elements.js';
+import { removeMarkups } from './markup-quiz.js';
+import { ANSWERS } from './constants.js';
+import { hideResultsPage } from './results-page.js';
 
 export const resetQuiz = () => {
-        // hide solutions and display main quiz form
+
+        // hide solutions
         solutions.forEach(solution => solution.style.display = 'none');
-        quizForm.style.display = 'block';
 
-        // hide final score and post quiz options
-        scoreParagraph.style.display = 'none';
-        postQuizButtons.style.display = 'none';
+        removeMarkups(ANSWERS);
 
-        // reset view solutions button to beginning visible state
-        viewSolutionsButton.style.display = 'block';
+        showQuiz();
 
-        // bring back radio buttons and deselect all previous responses
-        radioInputs.forEach(radioInput => {
-            radioInput.style.display = 'grid';
-            radioInput.checked = false;
-        });
-    
-        // reset user responses in html to be blank
-        for(let i = 1; i <= 10; i++) {
-            document.getElementById(`q${i}-user-response`).innerText = '';
-        }
-    
-        // hide all checkmark and x svgs
-        svgs.forEach(svg => svg.style.display = 'none');
-    
-        // display submit button and remove disabled status
-        submitButton.disabled = false;
-        submitButton.style.display = 'block';
+        hideResultsPage();
 
-        // reset opacity of code blocks
+        // deselect previous responses from radio buttons
+        radioInputs.forEach(radioInput => radioInput.checked = false);
+
+        // reset opacity of code blocks to zero so they can fade in on scroll
         codeBoxes.forEach(codeBox => codeBox.style.opacity = '0');
     
         // scroll to top of screen

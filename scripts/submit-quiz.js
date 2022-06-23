@@ -1,67 +1,37 @@
 import { ANSWERS } from './constants.js';
-import { quizScore, scoreParagraph, quizForm, postQuizButtons } from './html-elements.js';
+import { quizScore, quizForm, submitButton } from './html-elements.js';
+import { createMarkups } from './markup-quiz.js';
+import { calculateScore } from './calculate-score.js';
+import { showResultsPage } from './results-page.js';
 
 // function to hide quiz form, show results and modify each question  
 export const submitQuiz = e => {
 
-    e.preventDefault();
+    // prevent page refresh on form submission
+    e.preventDefault(); 
 
     // save user responses from form to an array
-    const formData = new FormData(quizForm); // user's quiz responses from form
+    const formData = new FormData(quizForm);
     let userResponses = ANSWERS.map((answer, index) => formData.get(`q${index + 1}`));
 
-    // compare each user response to quiz answers
-    for (let i = 0; i < ANSWERS.length; i++) {
-
-        // test if answer is correct
-        if(userResponses[i] === ANSWERS[i]) {
-            // make checkmark visible to indicate correct answer
-            document.getElementById(`q${i + 1}-check`).style.display = 'block';
-        } else {
-            // make x mark visible to indicate incorrect answer
-            document.getElementById(`q${i + 1}-x`).style.display = 'block';
-        }
-
-        // add user response to HTML for user to review
-        let userResponse = !userResponses[i] ? 'N/A' : userResponses[i];
-        document.getElementById(`q${i + 1}-user-response`).innerText = userResponse;
-
-    }
+    createMarkups(userResponses, ANSWERS);
 
     // add final score to HTML
-    quizScore.innerText = `${calculateScore(userResponses, ANSWERS)} / 10`;
+    quizScore.innerText = calculateScore(userResponses, ANSWERS);
+
+    hideQuiz();
 
     showResultsPage();
     
 }
 
-const showResultsPage = () => {
+const hideQuiz = () => {
 
     // hide main quiz form
     quizForm.style.display = 'none';
 
-    // show html element with final score
-    scoreParagraph.style.display = 'block';
-
-    // display post-quiz options
-    postQuizButtons.style.display = 'flex';
-
-}
-
-const calculateScore = (userResponses, solutions) => {
-        
-        let correctAnswers = 0; // total correct answers made by user
-
-        // compare each user response to quiz answers
-        for (let i = 0; i < solutions.length; i++) {
-            // test if answer is correct
-            if(solutions[i] === userResponses[i]) {
-                // increment counter
-                correctAnswers++;
-
-            } 
-        }
-
-        return correctAnswers;
+    // disable and hide submit button
+    submitButton.disabled = true;
+    submitButton.style.display = 'none';
 
 }

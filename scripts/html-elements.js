@@ -1,5 +1,4 @@
 export const codeBoxes = document.querySelectorAll('.code--block');
-export const postQuizButtons = document.getElementById('post-quiz-options');
 export const quizForm = document.getElementById('quiz-form');
 export const quizScore = document.getElementById('quiz-score');
 export const radioInputs = document.querySelectorAll("input[type='radio']");
