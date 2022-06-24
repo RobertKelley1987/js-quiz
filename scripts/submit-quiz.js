@@ -20,7 +20,7 @@ export const submitQuiz = e => {
     const formData = new FormData(quizForm);
     let userResponses = ANSWERS.map((answer, index) => formData.get(`q${index + 1}`));
 
-    // add markups to html using user responses and display results
+    // add markups to html using user responses and display final score
     createMarkups(userResponses, ANSWERS);
     hideQuiz();
     showResultsPage();

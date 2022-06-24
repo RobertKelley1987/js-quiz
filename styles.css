@@ -48,9 +48,6 @@ a {
 }
 
 input[type="radio"] {
-    /* https://moderncss.dev/pure-css-custom-styled-radio-buttons
-    appearance: none allows for custom styling of radio inputs and 
-    input pseudo elements */
     appearance: none;
     border: 1px solid var(--black);
     border-radius: 50%;
