@@ -7,8 +7,6 @@
 
 const fadeInOne = element => {
 
-    console.log('fade-in');
-
     let elementInViewport = element.getBoundingClientRect().top <= window.innerHeight - 150
 
     // if element is in viewport, change opacity to 1
@@ -26,4 +24,7 @@ const fadeInOne = element => {
 // RETURNS: Nothing
 //--------------------------------------------------------------------------------
 
-export const fadeInMany = elements => elements.forEach(el => fadeInOne(el));
+export const fadeInMany = elements => {
+    elements.forEach(el => fadeInOne(el));
+    console.log('fade-in');
+};

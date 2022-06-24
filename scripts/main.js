@@ -9,7 +9,7 @@ import { submitQuiz } from './submit-quiz.js';
 fadeInMany(codeBoxes);
 
 // add event listener to fade in any visible code boxes as user scrolls 
-window.addEventListener('scroll', () => _.debounce(fadeInMany(codeBoxes), 500));
+window.addEventListener('scroll', () => fadeInMany(codeBoxes));
 
 // add click listeners to submit, reset and view solutions buttons
 quizForm.addEventListener('submit', e => submitQuiz(e));

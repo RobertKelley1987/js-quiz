@@ -36,8 +36,6 @@ This project became very HTML intensive, as I hard-coded the multiple choice que
 
 HTML, CSS and JavaScript
 
-[UnderscoreJS](https://underscorejs.org/) -- I needed a debouncer to achieve the effect of some elements fading into the screen as the user scrolls, and ended up using one from this JavaScript library.
-
 <!--## Features-->
 
 <!-- TODO: List what specific 'user problems' that this application solves. -->
