@@ -1,10 +1,16 @@
 import { ANSWERS } from './constants.js';
-import { quizScore, quizForm, submitButton } from './html-elements.js';
+import { quizForm } from './html-elements.js';
 import { createMarkups } from './markup-quiz.js';
-import { calculateScore } from './calculate-score.js';
+import { hideQuiz } from './quiz-page.js';
 import { showResultsPage } from './results-page.js';
 
-// function to hide quiz form, show results and modify each question  
+//--------------------------------------------------------------------------------
+// NAME: submitQuiz
+// PURPOSE: Marks up quiz with user responses and displays final score
+// PARAMETERS: e - the event argument automatically generated on form submission
+// RETURNS: Nothing
+//--------------------------------------------------------------------------------
+
 export const submitQuiz = e => {
 
     // prevent page refresh on form submission
@@ -14,24 +20,9 @@ export const submitQuiz = e => {
     const formData = new FormData(quizForm);
     let userResponses = ANSWERS.map((answer, index) => formData.get(`q${index + 1}`));
 
+    // add markups to html using user responses and display results
     createMarkups(userResponses, ANSWERS);
-
-    // add final score to HTML
-    quizScore.innerText = calculateScore(userResponses, ANSWERS);
-
     hideQuiz();
-
     showResultsPage();
     
-}
-
-const hideQuiz = () => {
-
-    // hide main quiz form
-    quizForm.style.display = 'none';
-
-    // disable and hide submit button
-    submitButton.disabled = true;
-    submitButton.style.display = 'none';
-
 }

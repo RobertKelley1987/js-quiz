@@ -3,15 +3,8 @@
 :root {
     /* COLORS */
     --blue: #0000FF;
-    --pink: #ff8cc9;
     --white: #FFFFFF;
-    --blanched-almond: blanchedAlmond;
     --black: #222222;
-    --grey: rgb(197, 197, 197);
-
-
-    /* SIZES */
-    --header-height: 53px;
 }
 
 
@@ -206,20 +199,22 @@ input[type="radio"]:checked::after, input[type="radio"]:hover::after  {
     margin-right: calc(1em + 10px);
 }
 
+.button--solutions, 
+.button--try-again,
+.final-score {
+    display: none;
+}
+
 .flex-row{
     display: flex;
     align-items: center;
-}
-
-.not-visible {
-    display: none;
 }
 
 .post-quiz-options {
     justify-content: flex-start;
 }
 
-.quiz-score {
+.final-score {
     margin-bottom: 2em;
 }
 

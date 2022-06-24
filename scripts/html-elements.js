@@ -5,6 +5,5 @@ export const radioInputs = document.querySelectorAll("input[type='radio']");
 export const scoreParagraph = document.getElementById('score-paragraph');
 export const solutions = document.querySelectorAll('.question__solution');
 export const submitButton = document.getElementById('submit-button');
-export const svgs = document.querySelectorAll('.question__svg');
 export const tryAgainButton = document.getElementById('try-again');
 export const viewSolutionsButton = document.getElementById('view-solutions');

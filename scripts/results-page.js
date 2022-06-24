@@ -1,15 +1,11 @@
 import { scoreParagraph, tryAgainButton, viewSolutionsButton } from "./html-elements.js";
 
-export const hideResultsPage = () => {
-
-    // hide final score
-    scoreParagraph.style.display = 'none';
-
-    // hide post quiz options
-    tryAgainButton.style.display = 'none';
-    viewSolutionsButton.style.display = 'none';
-
-}
+//--------------------------------------------------------------------------------
+// NAME: showResultsPage
+// PURPOSE: Displays final score and post-quiz option buttons
+// PARAMETERS: None
+// RETURNS: Nothing
+//--------------------------------------------------------------------------------
 
 export const showResultsPage = () => {
 
@@ -19,5 +15,23 @@ export const showResultsPage = () => {
     // display post-quiz option buttons
     tryAgainButton.style.display = 'block';
     viewSolutionsButton.style.display = 'block';
+
+}
+
+//--------------------------------------------------------------------------------
+// NAME: hideResultsPage
+// PURPOSE: Hides final score and post-quiz option buttons
+// PARAMETERS: None
+// RETURNS: Nothing
+//--------------------------------------------------------------------------------
+
+export const hideResultsPage = () => {
+
+    // hide final score
+    scoreParagraph.style.display = 'none';
+
+    // hide post quiz options
+    tryAgainButton.style.display = 'none';
+    viewSolutionsButton.style.display = 'none';
 
 }

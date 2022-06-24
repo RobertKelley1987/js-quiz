@@ -1,17 +1,20 @@
-import { fadeInAllElements } from './fade-in-elements.js';
-import { submitQuiz } from './submit-quiz.js';
+import { codeBoxes, quizForm, tryAgainButton, viewSolutionsButton } from './html-elements.js';
+import { fadeInMany } from './fade-in.js';
+import { hideResultsPage } from './results-page.js';
 import { resetQuiz } from './reset-quiz.js';
-import { viewSolutions } from './view-solutions.js';
-import { quizForm, tryAgainButton, viewSolutionsButton, codeBoxes } from './html-elements.js';
-
+import { showSolutionsPage } from './solutions-page.js';
+import { submitQuiz } from './submit-quiz.js';
 
 // show any visible code boxes on initial load
-fadeInAllElements(codeBoxes);
+fadeInMany(codeBoxes);
 
 // add event listener to fade in any visible code boxes as user scrolls 
-window.addEventListener('scroll', () => _.debounce(fadeInAllElements(codeBoxes), 500));
+window.addEventListener('scroll', () => _.debounce(fadeInMany(codeBoxes), 500));
 
-// add click listeners to submit, reset and view answers to quiz
+// add click listeners to submit, reset and view solutions buttons
 quizForm.addEventListener('submit', e => submitQuiz(e));
-viewSolutionsButton.addEventListener('click', viewSolutions);
-tryAgainButton.addEventListener('click', resetQuiz);
+tryAgainButton.addEventListener('click', () => resetQuiz());
+viewSolutionsButton.addEventListener('click', () => {
+    hideResultsPage();
+    showSolutionsPage();
+});

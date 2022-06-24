@@ -1,8 +1,15 @@
-// DESC: function to add correct responses and correct / incorrect svgs to quiz html
+import { ANSWERS } from './constants.js';
+import { calcScore } from './calc-score.js';
+import { quizScore } from './html-elements.js';
+
+//--------------------------------------------------------------------------------
+// NAME: createMarkups
+// PURPOSE: Inserts correct responses, correction svgs and final score into html
 // PARAMETERS: 
 // userResponses - array of user's quiz responses
 // answers - array of quiz answers
-// RETURNS: nothing
+// RETURNS: Nothing
+//--------------------------------------------------------------------------------
 
 export const createMarkups = (userResponses, answers) => {
 
@@ -26,22 +33,33 @@ export const createMarkups = (userResponses, answers) => {
 
     }
 
+    // add final score to HTML
+    quizScore.innerText = calcScore(userResponses, ANSWERS);
+
 }
 
-// DESC: function to remove user responses and correct / incorrect svgs from quiz html
-// PARAMETERS: 
-// userResponses - array of user's quiz responses
-// answers - array of quiz answers
-// RETURNS: nothing
+//--------------------------------------------------------------------------------
+// NAME: removeMarkups
+// PURPOSE: Removes user responses, correction svgs and final score from html
+// PARAMETERS: answers - array of quiz answers
+// RETURNS: Nothing
+//--------------------------------------------------------------------------------
 
 export const removeMarkups = answers => {
 
-    // reset user responses in html to be blank
+    // clear markups from each question in quiz
     for(let i = 1; i <= answers.length; i++) {
+
+        // reset user response to be blank
         document.getElementById(`q${i}-user-response`).innerText = '';
+
+        // remove correction svgs
+        document.getElementById(`q${i}-check`).style.display = 'none';
+        document.getElementById(`q${i}-x`).style.display = 'none';
+
     }
 
-    // hide all checkmark and x svgs
-    svgs.forEach(svg => svg.style.display = 'none');
+    // remove final score from HTML
+    quizScore.innerText = '';
     
 }
