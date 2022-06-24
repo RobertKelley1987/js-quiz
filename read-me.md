@@ -1,4 +1,4 @@
-# Name of Project
+# JavaScript Quiz
 
 ## Table of Contents
 
@@ -10,6 +10,7 @@
 
 ## Overview
 
+![Screenshot of JavaScript Quiz](./screenshot.png?raw=true)
 <!-- TODO: Add a screenshot of the live project.
     1. Link to a 'live demo.'
     2. Describe your overall experience in a couple of sentences.
@@ -31,7 +32,7 @@
 
 ## Acknowledgements
 
-I could not have completed this project without this article by Stephanie Eckles on customizing
-radio buttons with css: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
+I could not have finished this project without this article by Stephanie Eckles on customizing
+radio buttons with CSS: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
 <!-- TODO: List any blog posts, tutorials or plugins that you may have used to complete the project. Only list those that had a significant impact. Obviously, we all 'Google' stuff while working on our things, but maybe something in particular stood out as a 'major contributor' to your skill set for this project. -->
