@@ -9,7 +9,7 @@
 - [Acknowledgements](#acknowledgements)
 
 ## Overview
-
+See live demo [here.](https://monumental-jalebi-b495b5.netlify.app/)
 ![Screenshot of JavaScript Quiz](./screenshot.png?raw=true)
 <!-- TODO: Add a screenshot of the live project.
     1. Link to a 'live demo.'
