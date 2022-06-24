@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
 - [Built With](#built-with)
-- [Features](#features)
+- [What Did I Learn?](#what-did-i-learn?)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
