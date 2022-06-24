@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A quiz testing the visitor's knowledge of JavaScript, a popular coding language.">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" sizes="192x192" href="/js-logo.png">
     <title>JavaScript Quiz</title>
+    <link rel="icon" sizes="192x192" href="/js-logo.png">
+    <link rel="stylesheet" href="/styles.css">
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +16,11 @@
 
 <body>
 
-    <!--NOTE: Label tags wrap radio inputs so the user can also select the input by clicking the 
-    label. When the input is wrapped by label, the "for" attribute is not required, but I am still using the 
-    input ids to calculate the final score in javascript-->
-
     <div class="container">
 
         <header>       
             <a href="/">
-                <h1 class="page-title">JavaScript Quiz</h1>
+                <h1 class="page-title text-hover">JavaScript Quiz</h1>
             </a>
         </header>
 
@@ -33,48 +29,50 @@
             <form id="quiz-form">
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q1-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q1-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>1. What is the output of the following program?</p>
-                                <code class="code--block">
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg aria-hidden="true" id="q1-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg aria-hidden="true" id="q1-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    1. What is the output of the following program?
+                                </p>
+                                <code class="code-block">
                                     <p>x = 3;</p> 
                                     <p>var x;</p> 
                                     <p>console.log(x);</p>
                                 </code>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q1-a" type="radio" name="q1" value="A">
                                     <span class="letter">A.</span> 
                                     <code>3</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q1-b" type="radio" name="q1" value="B">
                                     <span class="letter">B.</span> 
                                     <code>ReferenceError: cannot access 'x' before initialization</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q1-c" type="radio" name="q1" value="C">
                                     <span class="letter">C.</span> 
                                     <code>0</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q1-d" type="radio" name="q1" value="D">
                                     <span class="letter">D.</span> 
                                     <code>undefined</code>
@@ -82,50 +80,52 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">A</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q1-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">A</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q1-user-response"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q2-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q2-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>2. Which of the following keywords is NOT used to declare a variable in JavaScript?</p>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg aria-hidden="true" id="q2-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg aria-hidden="true" id="q2-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    2. Which of the following keywords is NOT used to declare a variable in JavaScript?
+                                </p>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q2-a" type="radio" name="q2" value="A">
                                     <span class="letter">A.</span> 
                                     <code>const</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q2-b" type="radio" name="q2" value="B">
                                     <span class="letter">B.</span> 
                                     <code>let</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q2-c" type="radio" name="q2" value="C">
                                     <span class="letter">C.</span> 
                                     <code>var</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q2-d" type="radio" name="q2" value="D">
                                     <span class="letter">D.</span> 
                                     <code>for</code>
@@ -133,51 +133,53 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">D</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q2-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">D</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q2-user-response"></span></p>
                         </div>
                     </div>
                 </div>    
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q3-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q3-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>3. At the end of the following program, what is the value of <code>x</code>?</p> 
-                                <code class="code--block">let x;</code>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q3-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q3-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    3. At the end of the following program, what is the value of <code>x</code>?
+                                </p> 
+                                <code class="code-block">let x;</code>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q3-a" type="radio" name="q3" value="A">
                                     <span class="letter">A.</span> 
                                     <code>true</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q3-b" type="radio" name="q3" value="B">
                                     <span class="letter">B.</span> 
                                     <code>false</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q3-c" type="radio" name="q3" value="C">
                                     <span class="letter">C.</span> 
                                     <code>undefined</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q3-d" type="radio" name="q3" value="D">
                                     <span class="letter">D.</span> 
                                     <code>0</code>
@@ -185,50 +187,52 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">C</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q3-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">C</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q3-user-response"></span></p>
                         </div>
                     </div>    
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q4-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q4-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>4. Which operator is used to assign a value to a variable in JavaScript?</p>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q4-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q4-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    4. Which operator is used to assign a value to a variable in JavaScript?
+                                </p>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q4-a" type="radio" name="q4" value="A">
                                     <span class="letter">A.</span> 
                                     <code>=</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q4-b" type="radio" name="q4" value="B">
                                     <span class="letter">B.</span> 
                                     <code>*</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q4-c" type="radio" name="q4" value="C">
                                     <span class="letter">C.</span> 
                                     <code>-</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q4-d" type="radio" name="q4" value="D">
                                     <span class="letter">D.</span> 
                                     <code>x</code>
@@ -236,55 +240,57 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">A</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q4-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">A</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q4-user-response"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q5-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q5-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>5. What is the output of the following program?</p> 
-                                <code class="code--block">
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q5-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q5-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    5. What is the output of the following program?
+                                </p> 
+                                <code class="code-block">
                                     <p>let result = 0;</p>
                                     <p>result += 5;</p> 
                                     <p>console.log(result);</p>
                                 </code>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q5-a" type="radio" name="q5" value="A">
                                     <span class="letter">A.</span> 
                                     <code>0</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q5-b" type="radio" name="q5" value="B">
                                     <span class="letter">B.</span> 
                                     <code>5</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q5-c" type="radio" name="q5" value="C">
                                     <span class="letter">C.</span> 
                                     <code>1</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q5-d" type="radio" name="q5" value="D">
                                     <span class="letter">D.</span> 
                                     <code>2.5</code>
@@ -292,50 +298,52 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">B</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q5-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">B</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q5-user-response"></span></p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q6-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q6-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>6. Which of the following array methods removes the last element from the array?</p>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q6-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q6-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    6. Which of the following array methods removes the last element from an array?
+                                </p>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q6-a" type="radio" name="q6" value="A">
                                     <span class="letter">A.</span> 
                                     <code>pull()</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q6-b" type="radio" name="q6" value="B">
                                     <span class="letter">B.</span> 
                                     <code>push()</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q6-c" type="radio" name="q6" value="C">
                                     <span class="letter">C.</span> 
                                     <code>pop()</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q6-d" type="radio" name="q6" value="D">
                                     <span class="letter">D.</span> 
                                     <code>reduce()</code>
@@ -343,27 +351,29 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">C</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q6-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">C</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q6-user-response"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q7-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q7-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend>
-                                <p class="question__content">7. What is the output of the following program?</p>
-                                <code class="code--block">
+                                <p class="question__content">
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q7-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q7-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    7. What is the output of the following program?
+                                </p>
+                                <code class="code-block">
                                     <p>function equalsOne(arg) {</p>
                                     <p>&emsp; return arg === 1;</p>
                                     <p>}</p>
@@ -372,28 +382,28 @@
                                 </code>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label"">
+                                <label class="radio-label text-hover"">
                                     <input id="q7-a" type="radio" name="q7" value="A">
                                     <span class="letter">A.</span> 
                                     <code>true</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label"">
+                                <label class="radio-label text-hover"">
                                     <input id="q7-b" type="radio" name="q7" value="B">
                                     <span class="letter">B.</span> 
                                     <code>false</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label"">
+                                <label class="radio-label text-hover"">
                                     <input id="q7-c" type="radio" name="q7" value="C">
                                     <span class="letter">C.</span> 
                                     <code>1</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label"">
+                                <label class="radio-label text-hover"">
                                     <input id="q7-d" type="radio" name="q7" value="D">
                                     <span class="letter">D.</span> 
                                     <code>undefined</code>
@@ -401,50 +411,52 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">B</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q7-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">B</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q7-user-response"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q8-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q8-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>8. Which of the following is an example of a comment in JavaScript?</p>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q8-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q8-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    8. Which of the following is an example of a comment in JavaScript?
+                                </p>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q8-a" type="radio" name="q8" value="A">
                                     <span class="letter">A.</span> 
                                     <code>// comment text goes here</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q8-b" type="radio" name="q8" value="B">
                                     <span class="letter">B.</span> 
                                     <code>/* comment text goes here */</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q8-c" type="radio" name="q8" value="C">
                                     <span class="letter">C.</span> 
                                     Both A and B
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q8-d" type="radio" name="q8" value="D">
                                     <span class="letter">D.</span> 
                                     None of the above
@@ -452,51 +464,53 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">C</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q8-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">C</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q8-user-response"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q9-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q9-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>9. Which of the following will return the value of <code>age</code> from the object <code>myDog</code>?</p>
-                                <code class="code--block">const myDog = { name: 'Fido', breed: 'Golden Retriever', age: 3 }</code>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q9-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q9-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    9. Which of the following will return the value of <code>age</code> from the object <code>myDog</code>?
+                                </p>
+                                <code class="code-block">const myDog = { name: 'Fido', breed: 'Golden Retriever', age: 3 }</code>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q9-a" type="radio" name="q9" value="A">
                                     <span class="letter">A.</span> 
                                     <code>myDog['age']</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q9-b" type="radio" name="q9" value="B">
                                     <span class="letter">B.</span> 
                                     <code>myDog[2]</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q9-c" type="radio" name="q9" value="C">
                                     <span class="letter">C.</span> 
                                     <code>myDog.age</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q9-d" type="radio" name="q9" value="D">
                                     <span class="letter">D.</span> 
                                     Both A and C
@@ -504,50 +518,52 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">D</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q9-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">D</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q9-user-response"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="question__wrapper">
-                    <!--CHECKMARK SYMBOL-->
-                    <svg id="q10-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <!--X SYMBOL-->
-                    <svg id="q10-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
                     <div>
                         <fieldset class="question">
                             <legend class="question__content">
-                                <p>10. Which String method finds a match between a regular expression and a string, and replaces the matched substring with a new substring?</p>
+                                <p>
+                                    <!--CHECKMARK SYMBOL-->
+                                    <svg id="q10-check" class="question__svg question__svg--blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    <!--X SYMBOL-->
+                                    <svg id="q10-x" class="question__svg question__svg--red" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    10. Which String method finds a match between a regular expression and a string, and replaces the matched substring with a new substring?
+                                </p>
                             </legend>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q10-a" type="radio" name="q10" value="A">
                                     <span class="letter">A.</span> 
                                     <code>match()</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q10-b" type="radio" name="q10" value="B">
                                     <span class="letter">B.</span> 
                                     <code>replace()</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q10-c" type="radio" name="q10" value="C">
                                     <span class="letter">C.</span> 
                                     <code>search()</code>
                                 </label>
                             </p>
                             <p class="question__choice">
-                                <label class="radio-label">
+                                <label class="radio-label text-hover">
                                     <input id="q10-d" type="radio" name="q10" value="D">
                                     <span class="letter">D.</span> 
                                     All of the above
@@ -555,21 +571,21 @@
                             </p>
                         </fieldset>
                         <div class="question__solution">
-                            <p>Correct Answer: <span class="letter letter--solution">B</span></p>
-                            <p class="question__user-response">Your Response: <span class="letter letter--solution" id="q10-user-response"></span></p>
+                            <p>Correct Answer: <span class="letter letter--w-margin">B</span></p>
+                            <p class="question__user-response">Your Response: <span class="letter letter--w-margin" id="q10-user-response"></span></p>
                         </div>
                     </div>
                 </div>    
 
-                <input id="submit-button" type="submit" value="SUBMIT QUIZ" class="button"/>
+                <input id="submit-button" type="submit" value="SUBMIT QUIZ" class="button box-shadow-adj"/>
 
             </form>
 
-            <p id="score-paragraph" class="final-score">Final Score: <span id="quiz-score"></span></p>
+            <p id="score-paragraph" class="final-score no-display">Final Score: <span id="quiz-score"></span></p>
 
-            <div class="flex-row">
-                <button id="view-solutions" class="button button--solutions">View Solutions</button>
-                <button class="button button--try-again" id="try-again">Try Again</button>
+            <div class="post-quiz-options box-shadow-adj">
+                <button id="view-solutions" class="button button--right-margin no-display">View Solutions</button>
+                <button class="button no-display" id="try-again">Try Again</button>
             </div>
 
         </main>

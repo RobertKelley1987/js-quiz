@@ -19,10 +19,10 @@ export const createMarkups = (userResponses, answers) => {
         // test if answer is correct
         if(userResponses[i] === answers[i]) {
             // make checkmark visible to indicate correct answer
-            document.getElementById(`q${i + 1}-check`).style.display = 'block';
+            document.getElementById(`q${i + 1}-check`).style.display = 'inline-block';
         } else {
             // make x mark visible to indicate incorrect answer
-            document.getElementById(`q${i + 1}-x`).style.display = 'block';
+            document.getElementById(`q${i + 1}-x`).style.display = 'inline-block';
         }
 
         // if user left a question blank, replace blank answer with 'N/A'

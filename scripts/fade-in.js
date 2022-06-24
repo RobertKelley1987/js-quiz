@@ -7,6 +7,8 @@
 
 const fadeInOne = element => {
 
+    console.log('fade-in');
+
     let elementInViewport = element.getBoundingClientRect().top <= window.innerHeight - 150
 
     // if element is in viewport, change opacity to 1

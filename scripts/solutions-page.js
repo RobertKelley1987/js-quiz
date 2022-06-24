@@ -1,4 +1,4 @@
-import { quizForm, radioInputs, solutions, tryAgainButton } from './html-elements.js';
+import { quizForm, radioInputs, radioLabels, solutions, tryAgainButton } from './html-elements.js';
 
 //--------------------------------------------------------------------------------
 // NAME: showSolutionsPage
@@ -17,6 +17,9 @@ export const showSolutionsPage = () => {
 
     // hide radio buttons
     radioInputs.forEach(radioInput => radioInput.style.display = 'none');
+
+    // disable hover effects on multiple choice answers (radio button labels)
+    radioLabels.forEach(radioLabel => radioLabel.classList.remove('text-hover'));
 
     // display 'try again' button
     tryAgainButton.style.display = 'block';
@@ -37,6 +40,9 @@ export const hideSolutionsPage = () => {
 
     // hide solution to each problem in quiz html
     solutions.forEach(solution => solution.style.display = 'none');
+
+    //add back hover effects on multiple choice answers (radio button labels)
+    radioLabels.forEach(radioLabel => radioLabel.classList.add('text-hover'));
 
     // hide 'try again' button
     tryAgainButton.style.display = 'none';
