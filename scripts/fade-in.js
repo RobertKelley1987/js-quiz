@@ -24,7 +24,4 @@ const fadeInOne = element => {
 // RETURNS: Nothing
 //--------------------------------------------------------------------------------
 
-export const fadeInMany = elements => {
-    elements.forEach(el => fadeInOne(el));
-    console.log('fade-in');
-};
+export const fadeInMany = elements => elements.forEach(el => fadeInOne(el));
