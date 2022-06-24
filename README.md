@@ -28,7 +28,7 @@ HTML, CSS and JavaScript
 
 ## Contact
 
-Robert Kelley - [robertkelley1987@gmail.com](mailto: robertkelley1987@gmail.com)
+Robert Kelley - robertkelley1987@gmail.com
 
 ## Acknowledgements
 
